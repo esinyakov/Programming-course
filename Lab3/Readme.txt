@@ -1,2 +1,2 @@
-//Find all polindromes between x and y
-//Найдите все полиндромы между x и y
+Task: Find all polindromes between x and y
+Задание: Найдите все полиндромы между x и y
