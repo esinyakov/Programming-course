@@ -1,58 +1,48 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int main ()
 {
-    const int n =15;
-    struct workers
+    struct cars
     {
         int id;
-        char name[3];
-        int professioncode;
-    } w[n];
+        char detail[10];
+        int weight
+    } c[5];
+    FILE* fp;
 
-    int i,j, r1 = 25,r2=6;
+    int i,car;
+    int weight = 0;
+    char *fname1 = "C:\\Users\\Evgeny\\Documents\\Programming-course\\Lab11\\cars.txt";
 
-    srand((unsigned)time(NULL));
+    fp = fopen(fname1,"r");
 
-    for (i = 0; i<n;i++)
+    for(i=0;i<5;i++)
     {
-        w[i].id=i;
-        for (j=0;j<3;j++)
-        {
-            w[i].name[j]=((char)(rand()%r1)+97);
-        }
-        w[i].name[3]='\0';
-        w[i].professioncode=(int)(rand()%r2);
+        fscanf(fp,"%d %s %d",&c[i].id,c[i].detail,&c[i].weight);
     }
 
-    int k[6]={0};
-    for (i = 0; i<n;i++)
+    fclose(fp);
+
+    for(i=0;i<5;i++)
     {
-        printf("worker id: %d name: %s professioncode: %d\n",w[i].id,w[i].name,w[i].professioncode);
-        switch (w[i].professioncode)
-        {
-            case 0: k[0]++; break;
-            case 1: k[1]++; break;
-            case 2: k[2]++; break;
-            case 3: k[3]++; break;
-            case 4: k[4]++; break;
-            case 5: k[5]++; break;
-        }
+        printf("car id: %d detail: %s weight: %d\n",c[i].id,c[i].detail,c[i].weight);
     }
 
-    int imax=0,max = k[0];
-    for(i=0;i<6;i++)
+    char *fname2 = "C:\\Users\\Evgeny\\Documents\\Programming-course\\Lab11\\detail.txt";
+
+    printf("enter car number\n");
+    scanf("%d",&car);
+
+    fp = fopen(fname2,"w");
+    for(i=0;i<5;i++)
     {
-        if(k[i]>max)
+        if(c[i].id==car)
         {
-            max = k[i];
-            imax =i;
+            fprintf(fp,"car id: %d detail: %s weight: %d\n",c[i].id,c[i].detail,c[i].weight);
+            weight+=c[i].weight;
         }
     }
-
-    printf("most popular professioncode: %d",imax);
+    fprintf(fp,"sum details weight: %d\n",weight);
+    fclose(fp);
     getch();
-
 }
