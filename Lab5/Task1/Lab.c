@@ -6,23 +6,23 @@
 int main()
 {
 
-    int n, r = 100;
+	int n, r = 100;
 
-    printf("Enter array length: ");
-    scanf("%d",&n);
+	printf("Enter array length: ");
+	scanf("%d",&n);
 
-    int* a;
-    int i,j;
+	int* a;
+	int i,j;
 
-    a=(int*)malloc(n*sizeof(int));
-    srand((unsigned)time(NULL));
+	a=(int*)malloc(n*sizeof(int));
+	srand((unsigned)time(NULL));
 
-    printf("\nArray:\n");
-    for (i = 0; i < n; i++)
-    {
-        a[i] = (int)(rand()%r);
-        printf("%d ",a[i]);
-    }
+	printf("\nArray:\n");
+	for (i = 0; i < n; i++)
+	{
+		a[i] = (int)(rand()%r);
+		printf("%d ",a[i]);
+	}
 
 	int max=a[0],min=a[0];
 	int imin,imax,tmp,imaxnew;
@@ -36,7 +36,7 @@ int main()
 		}
 		if(a[i]>max)
 		{
-			max = a[i];
+			max = a[i];	
 			imax = i;
 		}
 	}
@@ -77,7 +77,7 @@ int main()
 	{
 		printf("%d ",a[i]);
 	}
-    free(a);
+        free(a);
 	getch();
 	return 0;
 }
