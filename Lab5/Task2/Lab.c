@@ -6,23 +6,23 @@
 int main()
 {
 
-    int n, r = 100;
+	int n, r = 100;
 
-    printf("Enter array length: ");
-    scanf("%d",&n);
+	printf("Enter array length: ");
+	scanf("%d",&n);
 
-    int* a;
-    int i,j,k;
+	int* a;
+	int i,j,k;
 
-    a=(int*)malloc(n*sizeof(int));
-    srand((unsigned)time(NULL));
+	a=(int*)malloc(n*sizeof(int));
+	srand((unsigned)time(NULL));
 
-    printf("\nArray:\n");
-    for (i = 0; i < n; i++)
-    {
-        a[i] = (int)(rand()%r);
-        printf("%d ",a[i]);
-    }
+	printf("\nArray:\n");
+	for (i = 0; i < n; i++)
+	{
+		a[i] = (int)(rand()%r);
+		printf("%d ",a[i]);
+	}
 
 	printf("\n\n");
 
