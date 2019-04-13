@@ -1,3 +1,0 @@
-car id: 1 detail: wheel weight: 20
-car id: 1 detail: chair weight: 10
-sum details weight: 30
