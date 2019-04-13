@@ -1,1 +1,0 @@
-1 wheel 20 1 chair 10 2 wheel 15 2 chair 5 3 wheel 15
